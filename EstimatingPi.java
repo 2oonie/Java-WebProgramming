@@ -31,9 +31,13 @@ public class EstimatingPi {
 			
 			pi += Math.pow(-1, i + 1)/((2.0*i-1.0));
 			
-			System.out.println("i: " + isPowerOfTen(i) + " the pi is " + pi*4.0);
+			if (isPowerOfTen(i)) {
+			
+			System.out.println("i: " + i + " the pi is " + pi*4.0);
 				
 	}
 
 }
 	}
+}
+

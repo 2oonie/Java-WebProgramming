@@ -18,10 +18,8 @@ public class EstimatingPi {
 			
 			pi += Math.pow(-1, i + 1)/((2.0*i-1.0));
 			
-			if (i % 10 == 0) {
-				
-				System.out.println("i: " + i + " the pi is " + pi*4.0);
-			}	
+			System.out.println("i: " + i + " the pi is " + pi*4.0);
+		
 	}
 
 }

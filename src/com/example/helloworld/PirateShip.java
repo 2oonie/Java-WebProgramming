@@ -1,3 +1,4 @@
+package com.example.helloworld;
 
 public class PirateShip extends SpaceShip
 {
@@ -25,11 +26,11 @@ public class PirateShip extends SpaceShip
 	{
 		String s = "PIRATESHIP ERROR"; 
 		
-		s = "\nName: " + name + "\n"; 
+		s = "\nName: " + getName() + "\n";
 
 
-		s += "Location: " + " ( "+ x + "," + y +" ) " + "\n" +
-				"Booty: " + booty + "\n";
+		s += "Location: " + " ( "+ getX() + "," + getY() +" ) " + "\n" +
+				"Booty: " + getBooty() + "\n";
 		
 		s += "\n";
 		

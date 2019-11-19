@@ -2,9 +2,11 @@ import java.util.Scanner;
 
 public class Complex implements Cloneable
 {
+	//variables 
 	private double a;
 	private double b;
 	
+	//3 constructors for Complex
 	public Complex()
 	{
 		a = 0;
@@ -23,6 +25,7 @@ public class Complex implements Cloneable
 		this.b = b;
 	}
 	
+	//Getters and Setters for Complex
 	public double getImag() 
 	{
 		return b;
@@ -43,6 +46,7 @@ public class Complex implements Cloneable
 		a = A;
 	}
 	
+	//return a string representation of the form, a +bi
 	public String toString() 
 	{
 		if(b == 0)
@@ -54,6 +58,7 @@ public class Complex implements Cloneable
 		
 	}
 	
+	//methods for plus, minus, time, divide, & abs for Complex 
 	public Complex plus(Complex idk)
 	{
 		double real = a + idk.a;
@@ -88,6 +93,7 @@ public class Complex implements Cloneable
 		return Math.sqrt(Math.pow(a,2) + Math.pow(b, 2));
 	}
 	
+	// implements the Cloneable interface
 	public Complex clone()
 	{
 		try 
@@ -96,25 +102,29 @@ public class Complex implements Cloneable
 		}
 		catch (CloneNotSupportedException e)
 		{
-			System.out.print( "Sorry, it does not work like that!!!!");
+			System.out.print( "Sorry, cannot be copyed.");
 			throw new RuntimeException();
 		}
 		
 	}
+	
+	//main for task 1
 	public static void main(String[] args) 
 	{
 		Scanner userInput = new Scanner(System.in);
 		
-		
-		System.out.println("Enter the number of rows and columns of matrix");
+		//asks user for inputs for complex #s (a and b)
+		System.out.println("Enter the a(real #) and b(imag #): ");
 		int i = userInput.nextInt();
 		int j = userInput.nextInt();
 		int i1 = userInput.nextInt();
 		int j2 = userInput.nextInt();
-	
+		
+		//complex #s that were enter 
 		Complex a  = new Complex(i,j);
 		Complex b  = new Complex(i1,j2);
 		
+		//displays the result of time, plus, minus, divide, and abs 
 		System.out.println(a.time(b).toString());
 		System.out.println(a.plus(b).toString());
 		System.out.println(a.minus(b).toString());

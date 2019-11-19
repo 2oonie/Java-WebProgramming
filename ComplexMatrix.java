@@ -7,15 +7,16 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 
-public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<ComplexMatrix[][]>
+public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<ComplexMatrix[][]> 
 {
+	//variables 
 	private double a;
 	private double b;
 	private Complex current [][];
 	private int rows;
 	private int columns;
 	
-	
+	//3 constructors for ComplexMatrix
 	public  ComplexMatrix ()
 	{
 		a = 0;
@@ -36,6 +37,7 @@ public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<
 		this.columns = b;
 	}
 	
+	//generator to create random number for the matrix
 	public void GeneRandomNumber(int gene)
 	{
 		this.current = new Complex[rows][columns];
@@ -49,6 +51,8 @@ public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<
 		}
 		
 	}
+	
+	//Getters and Setters
 	public double getImag() 
 	{
 		return b;
@@ -99,42 +103,42 @@ public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<
 		columns = Columns;
 	}
 	
+	//return a string representation of matrix
 	public String toString() 
 	{
-		String matrice = " ";
+		String matrix = " ";
 		
 		for(int i = 0; i < rows; i++)
 		{
 			for(int j = 0; j < columns; j++)
 			{
-				matrice += " " + current[i][j];				
+				matrix += " " + current[i][j];				
 			}
 			
-			matrice += "\n";
+			matrix += "\n";
 		}
-		return matrice;
+		return matrix;
 		
 	}
 	
-	public Complex  plus( Complex idk, Complex idk1)
+	//methods for plus, time, & zero for ComplexMatrix 
+	public Complex plus( Complex idk, Complex idk1)
 	{
 		return idk.plus(idk1);
 
 	}
 	
-	
-	public  Complex  time( Complex  idk, Complex idk1)
+	public Complex time( Complex  idk, Complex idk1)
 	{
 		return idk.time(idk1);
 	}
 	
-	
-	public  Complex  zero()
+	public Complex zero()
 	{
 		return new Complex();
 	}
 	
-	
+	//implements the Cloneable interface
 	public  ComplexMatrix  clone()
 	{
 		try 
@@ -143,36 +147,43 @@ public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<
 		}
 		catch (CloneNotSupportedException e)
 		{
-			System.out.print( "Sorry, it does not work like that!!!!");
+			System.out.print( "Sorry, cannot be copyed.");
 			throw new RuntimeException();
 		}
 		
 	}
 	
-	public Complex compareTo(ComplexMatrix c)
+	//using ArrayList to compare two objects 
+	public int compareTo(ComplexMatrix c)
 	{
 	 
-		return this.getCurrent() - c.getCurrent();
+		return this.rows - c.rows;
 		
 		
 	}
 	
+	//main for task 2 and 3
 	public static void main(String[] args) 
 	{
 		Scanner userInput = new Scanner(System.in);
 		
-		
+		//asks user for input of rows and columns
 		System.out.println("Enter the number of rows and columns of matrix");
 		int i = userInput.nextInt();
 		int j = userInput.nextInt();
 	
+		
 		ComplexMatrix a  = new ComplexMatrix(i,j);
 		ComplexMatrix b  = new ComplexMatrix(i,j);
+		
+		//generating random number for a and b
 		a.GeneRandomNumber(10);
 		b.GeneRandomNumber(5);
 		
-		GenericMatrix.printResult(a.getCurrent(),b.getCurrent(), a.multiplyMatrix(a.getCurrent(),b.getCurrent()), '*');
-		GenericMatrix.printResult(a.getCurrent(),b.getCurrent(), a.addMatrix(a.getCurrent(),b.getCurrent()), '+'); 
+		//displays the result for matrix being plus and time
+		GenericMatrix.printResult(a.getCurrent(),b.getCurrent(), a.timeMatrix(a.getCurrent(),b.getCurrent()), '*');
+		GenericMatrix.printResult(a.getCurrent(),b.getCurrent(), a.plusMatrix(a.getCurrent(),b.getCurrent()), '+'); 
+		
 		
 		System.out.println("Enter the number of matrices: ");
 		int numOfMatrices = userInput.nextInt();
@@ -195,6 +206,7 @@ public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<
 			}
 		}
 		
+		Collections.sort(complex);
 		
 	}
 

@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
 
 public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<ComplexMatrix[][]>
 {
@@ -147,8 +152,8 @@ public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<
 	public Complex compareTo(ComplexMatrix c)
 	{
 	 
-		//c.getCurrent() < getCurrent();
-		ComplexMatrix.sort(getCurrent(), ComplexMatrix.)
+		return this.getCurrent() - c.getCurrent();
+		
 		
 	}
 	

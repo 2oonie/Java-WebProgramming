@@ -167,7 +167,7 @@ public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<
 		Scanner userInput = new Scanner(System.in);
 		
 		//asks user for input of rows and columns
-		System.out.println("Enter the number of rows and columns of matrix");
+		System.out.println("Enter the number of rows and columns of matrix: ");
 		int i = userInput.nextInt();
 		int j = userInput.nextInt();
 	
@@ -184,7 +184,7 @@ public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<
 		GenericMatrix.printResult(a.getCurrent(),b.getCurrent(), a.plusMatrix(a.getCurrent(),b.getCurrent()), '+'); 
 		
 		
-		System.out.println("Enter the number of matrices: ");
+		System.out.println("\nEnter the number of matrices: ");
 		int numOfMatrices = userInput.nextInt();
 		ArrayList<ComplexMatrix> complex = new ArrayList<ComplexMatrix>();
 		for(int t = 0; t < numOfMatrices; t++)
@@ -203,10 +203,9 @@ public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<
 			{
 				complex.get(q).compareTo(complex.get(z));
 			}
-			
-			Collections.sort(complex);
-			System.out.println("Sorted with compareTo: " + complex);
 		}
+		
+		System.out.println("Sorted with compareTo: \n" + complex + " ");
 		
 //		Collections.sort(complex);
 		

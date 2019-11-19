@@ -114,11 +114,11 @@ public class Complex implements Cloneable
 		Scanner userInput = new Scanner(System.in);
 		
 		//asks user for inputs for complex #s (a and b)
-		System.out.println("Enter the a(real #) and b(imag #): ");
-		int i = userInput.nextInt();
-		int j = userInput.nextInt();
-		int i1 = userInput.nextInt();
-		int j2 = userInput.nextInt();
+		System.out.println("Enter the complex #s: ");
+		int i = userInput.nextInt(); //real
+		int j = userInput.nextInt(); //imag
+		int i1 = userInput.nextInt(); //real
+		int j2 = userInput.nextInt(); //imag
 		
 		//complex #s that were enter 
 		Complex a  = new Complex(i,j);

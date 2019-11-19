@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 
-public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<ComplexMatrix[][]> 
+public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<ComplexMatrix> 
 {
 	//variables 
 	private double a;
@@ -159,7 +159,6 @@ public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<
 	 
 		return this.rows - c.rows;
 		
-		
 	}
 	
 	//main for task 2 and 3
@@ -204,9 +203,12 @@ public class ComplexMatrix extends GenericMatrix<Complex> implements Comparable<
 			{
 				complex.get(q).compareTo(complex.get(z));
 			}
+			
+			Collections.sort(complex);
+			System.out.println("Sorted with compareTo: " + complex);
 		}
 		
-		Collections.sort(complex);
+//		Collections.sort(complex);
 		
 	}
 

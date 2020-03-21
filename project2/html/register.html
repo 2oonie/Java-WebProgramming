@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <title>Registration</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	  <link href = "../css/register.css" rel = "stylesheet" type = "text/css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	  <script src="../js/register.js"></script>
+	  
+
+	</head>
+	<body>
+
+		<div class="jumbotron text-center" style="margin-bottom:0">
+		<img align = "left" src ="../img/img_logo.jpg" alt ="logo" width = "100" height = "100"/>
+		  <h1>Registration<h1>
+		</div>
+
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>                        
+			  </button>
+			  <a class="navbar-brand" href="#">Ramen Cat</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+			  <ul class="nav navbar-nav">
+				<li class="active"><a href="home.html">Home</a></li>
+				<li><a href="register.html">Registration Page</a></li>
+				<li><a href="animated.html">Animation Page</a></li>
+			  </ul>
+			</div>
+		  </div>
+		</nav>
+
+		<div class="container">
+		  <div class="row">
+			<div class="col-sm-4">
+			  <div class="dropdown">
+							  <button onclick="myFunction()" class="dropbtn" max-width = "100%">Menu</button>
+							  <div id="myDropdown" class="dropdown-content">
+								<a href="home.html">Home</a>
+								<a href="register.html">Registration</a>
+								<a href="animated.html">Animations</a>
+							  </div>
+							</div>
+								<br>
+							<h3 align="center">Kitten</h3>
+							<h4 align="center">Kitten</h4>
+							<!--<img src="../img/img_blanket_kitten.jpg" style="max-width:100%"/><br>-->
+							<img src="../img/img_blanket_2kitten.jpg" style="max-width:100%"/><br>
+							<img src="../img/img_basket_kitten.jpg" style="max-width:100%"/><br>
+							<img src="../img/img_2kitten.jpg" style="max-width:100%"/><br>
+							<!--<img src="../img/img_bundle_kittens.jpg" style="max-width:100%"/><br>-->
+							<img src="../img/img_4kitten.jpg" style="max-width:100%"/><br>
+							<img src="../img/img_kittens.jpg" style="max-width:100%"/><br>confirmation.php
+							<h4 align="center">Kitten</h4>
+							<h3 align="center">Kitten</h3>
+			  </div>
+			<div class="col-sm-8">
+			    <form action="" onsubmit="return formValidation();">
+			  <div class="col-sm-6">
+			  <br><br><br><br><br>
+								<h3 class="double">Account Information</h3>
+								
+										<label for ="username">Username: </label><br/>
+										<input id ="userName" type ="text" name ="userName" placeholder ="Enter Username" size ="40" required="required" maxlength="50" minlength="6"/><br/>
+										<p id="p2"></p>
+									
+										<label for ="password">Password: </label><br/>
+									
+										<input id ="password" type = "password" name ="password" placeholder ="Enter password" size ="40"/><br/>
+										<p id="p9"></p>
+										
+										<label for ="repeatPassword">Confirm Password: </label><br/>
+									
+										<input id ="repeatPassword" type ="password" name ="repeatPassword" placeholder ="Enter confirm password"  size ="40"/><br/>
+										<p id="p10"></p>
+										
+								</div>
+								<div class="col-sm-6">
+								<br><br><br><br><br>
+								<h3 class="double">Personal Information</h3>
+												<label for="firstName">First Name: </label><br/>
+												<input id="firstName" type ="text" name ="firstName" placeholder ="Enter first name" required="required" maxlength="50"/><br/>
+												<p id="p1"></p>
+												
+												
+												<label for="lastName"> Last Name: </label><br/>
+												<input id="lastName" type ="text" name ="lastName" placeholder ="Enter last name" required="required" maxlength="50"/><br/>
+												<p id="p8"></p>
+											
+												<label for ="firstAddress">Address: </label><br/>
+												<input id ="firstAddress" type ="text" name ="firstAddress" placeholder ="Enter first address" required="required" maxlength="100"/><br/>
+												<p id="p5"></p>
+												
+												<label for ="secondAddress">Address: </label><br/>
+												<input type ="text" name ="secondAddress" placeholder ="Enter second address" maxlength="100"/><br/>
+											
+												
+												<label for ="city">City: </label><br/>
+												<input id ="city" type ="text" name ="city" placeholder ="Enter city" required="required" maxlength="50"/><br/> 
+												<p id="p7"></p>
+												
+												<label for ="states">State: </label><br/>
+											
+												<select id="states" required="required" maxlength="52">
+													<option value ="select">Select</option>
+													<option value ="alabama">Alabama</option>
+													<option value ="alaska">Alaska</option>
+													<option value ="arizona">Arizona</option>
+													<option value ="arkansas">Arkansas</option>
+													<option value ="california">California</option>
+													<option value ="colorado">Colorado</option>
+													<option value ="connecticut">Connecticut</option>
+													<option value ="delaware">Delaware</option>
+													<option value ="florida">Florida</option>
+													<option value ="georgia">Georgia</option>
+													<option value ="hawaii">Hawaii</option>
+													<option value ="idaho">Idaho</option>
+													<option value ="illinois">Illinois</option>
+													<option value ="indiana">Indiana</option>
+													<option value ="iowa">Iowa</option>
+													<option value ="kansas">Kansas</option>
+													<option value ="kentucky">Kentucky</option>
+													<option value ="louisiana">Louisiana</option>
+													<option value ="maine">Maine</option>
+													<option value ="maryland">Maryland</option>
+													<option value ="massachusetts">Massachusetts</option>
+													<option value ="michigan">Michigan</option>
+													<option value ="minnesota">Minnesota</option>
+													<option value ="mississippi">Mississippi</option>
+													<option value ="missouri">Missouri</option>
+													<option value ="montana">Montana</option>
+													<option value ="nebraska">Nebraska</option>
+													<option value ="nevada">Nevada</option>
+													<option value ="newHampshire">New Hampshire</option>
+													<option value ="newJersey">New Jersey</option>
+													<option value ="newMexico">New Mexico</option>
+													<option value ="newYork">New York</option>
+													<option value ="northCarolina">North Carolina</option>
+													<option value ="northDakota">North Dakota</option>
+													<option value ="ohio">Ohio</option>
+													<option value ="oklahoma">Oklahoma</option>
+													<option value ="oregon">Oregon</option>
+													<option value ="pennsylvania">Pennsylvania</option>
+													<option value ="rhodeIsland">Rhode Island</option>
+													<option value ="southCarolina">South Carolina</option>
+													<option value ="southDakota">South Dakota</option>
+													<option value ="tennessee">Tennessee</option>
+													<option value ="texa">Texa</option>
+													<option value ="utah">Utah</option>
+													<option value ="vermont">Vermont</option>
+													<option value ="virginia">Virginia</option>
+													<option value ="washington">Washington</option>
+													<option value ="westVirginia">West Virginia</option>
+													<option value ="wisconsin">Wisconsin</option>
+													<option value ="wyoming">Wyoming</option>
+													<option value ="other">Other</option>
+												</select><br/>
+												<p id="p4"></p>
+												
+												<label for ="zipCode">Zip Code: </label><br/>											
+												<input id ="zipCode" type ="tel" name ="zipCode" placeholder ="xxxxx or xxxxx-xxxx" required="required" maxlength="10" minlength="5"/><br/>
+												<p id="p6"></p>
+												
+												<label for ="phoneNumber">Phone Number: </label><br/>										
+												<input id ="phoneNumber" type ="tel" name ="phoneNumber" placeholder ="xxx-xxx-xxxx" required="required" maxlength="12"/><br/>
+												<p id="p11"></p>
+												
+												<label for ="email">Email: </label><br/>											
+												<input id ="email" type ="text" name ="email" placeholder ="ex. x@x.x" required="required"/><br/>
+												<p id="p3"></p>
+												
+												
+												
+												<label for ="gender">Gender: </label><br/>
+											
+												<input type="radio" name="Gender" id="maleGender" value="male" required="required"/>
+												<label for="maleGender"> Male </label>
+												<input type="radio" name="Gender" id="femaleGender" value="female" required="required"/>
+												<label for="femaleGender"> Female </label>
+												<input type="radio" name="Gender" id="otherGender" value="other" required="required"/> 
+												<label for="otherGender">Other </label><br/>
+												<!--<p id="p14"></p>-->
+											
+												<label for ="martialStatus">Martial Status: </label><br/>
+												<input type ="radio" name ="Status" id ="singleStatus" value ="single" required="required"/>
+												<label for ="singleStatus"> Single </label>
+												<input type ="radio" name ="Status" id ="marriedStatus" value ="married" required="required"/>
+												<label for ="marriedStatus"> Married </label>
+												<input type ="radio" name ="Status" id ="widowedStatus" value ="widowed" required="required"/>
+												<label for ="widowedStatus"> Widowed </label>
+												<input type ="radio" name ="Status" id ="divorcedStatus" value ="divorced" required="required"/>
+												<label for ="divorcedStatus"> Divorced </label>
+												<input type ="radio" name ="Status" id ="separatedStatus" value ="separated" required="required"/> 
+												<label for="separatedStatus"> Separated </label><br/>
+												<!--<p id="p13"></p>-->
+										
+												<label for ="birthDay">Date of birth: </label><br/>
+											
+												<input id ="birthDay" type = "date" name = "birthDay" required="required" placeholder="MM/dd/yyyy"/><br/>
+												<p id="p15"></p>
+									<br><br>
+									</div>
+									<br><br>
+									<div align="center" style="margin-bottom:20%">
+									<input id="sumbit" type="submit" value = "Submit Data"/>
+									<input id="reset" type="reset" value = "Reset Data"/>
+									</div>
+
+							</form>
+					
+				  </div>
+				</div>
+			</div>
+		  </div>
+		</div>
+		
+
+		
+		<div class="jumbotron text-center" style="margin-bottom:0">
+		  <p style ="font-size: 10px">2020 Manschester Ln, St.Louis, MO 63112
+						</p>
+						<p style ="font-size: 10px">Phone:+1 314 1234151
+						</p>
+
+						<a href="mailto:someone@example.com"><span class="glyphicon glyphicon-envelope"></span></a>
+
+						<a href="https://www.reddit.com/r/Kitten/" method="get" target="_blank"><span class="glyphicon glyphicon-camera"></span></a>
+
+						<a href="https://www.youtube.com/watch?v=jPhGpktH56Q" method="get" target="_blank"><span class="glyphicon glyphicon-film"></span></a>
+		</div>
+
+		<script>
+				/* When the user clicks on the button, 
+				toggle between hiding and showing the dropdown content */
+				function myFunction() {
+				  document.getElementById("myDropdown").classList.toggle("show");
+				}
+
+				// Close the dropdown if the user clicks outside of it
+				window.onclick = function(event) {
+				  if (!event.target.matches('.dropbtn')) {
+					var dropdowns = document.getElementsByClassName("dropdown-content");
+					var i;
+					for (i = 0; i < dropdowns.length; i++) {
+					  var openDropdown = dropdowns[i];
+					  if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+					  }
+					}
+				  }
+				}
+			</script>
+	</body>
+</html>

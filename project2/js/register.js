@@ -11,26 +11,14 @@ let city = document.getElementById('city');
 let phoneNumber = document.getElementById('phoneNumber');
 let pswrd = document.getElementById('password');
 let repeatPassword = document.getElementById('repeatPassword');
-let Status = document.getElementById('Status');
-let Gender = document.getElementById('Gender');
 let birthDay = document.getElementById('birthDay');
 
-/*let Gender = document.jquerySelector('input[name = "Gender":checked');
+let returnValue = true;	
+	
+let Gender = $('input[name="Gender"]:checked');
+let Status = $('input[name="Status"]:checked');
 
-
-
-let returnValue = true;
-
-if(Gender != null)
-{
-	alert(Gender.value);
-}
-else
-{
-	alert('Nothing checked');
-}*/
-
-/*if(radioSelection(Status, "Select your status.", 'p13'))
+if(radioSelection(Status, "Select your status.", 'p13'))
 {
 	returnValue = false;
 }
@@ -38,12 +26,12 @@ else
 if(radioSelection(Gender, "Select your gender.", 'p14'))
 {
 	returnValue = false;
-}*/
+}
 
-if(radioSelection(birthDay, "Select your DoB.", 'p15'))
+/*if(radioSelection(birthDay, "Select your DoB.", 'p15'))
 {
 	returnValue = false;
-}
+}*/
 
 
 
@@ -168,15 +156,16 @@ return true;
 }
 
 
-/*function radioSelection(inputtext, alertMsg, ptag) {
-if (!inputtext.value == " ") {
-document.getElementById(ptag).innerText = alertMsg; //this segment displays the validation rule for selection.
-inputtext.focus();
-return false;
-}
+function radioSelection(inputtext, alertMsg, ptag) {
+if(inputtext == null)	
+{	
+	document.getElementById(ptag).innerText = alertMsg; //this segment displays the validation rule for selection.
+	inputtext.focus();
+	return false;	
+}	
 document.getElementById(ptag).innerText = "✓";
 return true;
-}*/
+}
 
 
 // Function that checks whether an user entered valid email address or not and displays alert message on wrong email address format.

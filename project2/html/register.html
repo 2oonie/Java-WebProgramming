@@ -60,7 +60,7 @@
 							<img src="../img/img_2kitten.jpg" style="max-width:100%"/><br>
 							<!--<img src="../img/img_bundle_kittens.jpg" style="max-width:100%"/><br>-->
 							<img src="../img/img_4kitten.jpg" style="max-width:100%"/><br>
-							<img src="../img/img_kittens.jpg" style="max-width:100%"/><br>confirmation.php
+							<img src="../img/img_kittens.jpg" style="max-width:100%"/><br>
 							<h4 align="center">Kitten</h4>
 							<h3 align="center">Kitten</h3>
 			  </div>
@@ -71,17 +71,17 @@
 								<h3 class="double">Account Information</h3>
 								
 										<label for ="username">Username: </label><br/>
-										<input id ="userName" type ="text" name ="userName" placeholder ="Enter Username" size ="40" required="required" maxlength="50" minlength="6"/><br/>
+										<input id ="userName" type ="text" name ="userName" placeholder ="Enter Username" size ="40" maxlength="50" minlength="6"/><br/>
 										<p id="p2"></p>
 									
 										<label for ="password">Password: </label><br/>
 									
-										<input id ="password" type = "password" name ="password" placeholder ="Enter password" size ="40"/><br/>
+										<input id ="password" type = "password" name ="password" placeholder ="Enter password" size ="40" maxlength="50" minlength="8"/><br/>
 										<p id="p9"></p>
 										
 										<label for ="repeatPassword">Confirm Password: </label><br/>
 									
-										<input id ="repeatPassword" type ="password" name ="repeatPassword" placeholder ="Enter confirm password"  size ="40"/><br/>
+										<input id ="repeatPassword" type ="password" name ="repeatPassword" placeholder ="Enter confirm password"  size ="40" maxlength="50" minlength="8"/><br/>
 										<p id="p10"></p>
 										
 								</div>
@@ -89,16 +89,16 @@
 								<br><br><br><br><br>
 								<h3 class="double">Personal Information</h3>
 												<label for="firstName">First Name: </label><br/>
-												<input id="firstName" type ="text" name ="firstName" placeholder ="Enter first name" required="required" maxlength="50"/><br/>
+												<input id="firstName" type ="text" name ="firstName" placeholder ="Enter first name"  maxlength="50"/><br/>
 												<p id="p1"></p>
 												
 												
 												<label for="lastName"> Last Name: </label><br/>
-												<input id="lastName" type ="text" name ="lastName" placeholder ="Enter last name" required="required" maxlength="50"/><br/>
+												<input id="lastName" type ="text" name ="lastName" placeholder ="Enter last name" maxlength="50"/><br/>
 												<p id="p8"></p>
 											
 												<label for ="firstAddress">Address: </label><br/>
-												<input id ="firstAddress" type ="text" name ="firstAddress" placeholder ="Enter first address" required="required" maxlength="100"/><br/>
+												<input id ="firstAddress" type ="text" name ="firstAddress" placeholder ="Enter first address"  maxlength="100"/><br/>
 												<p id="p5"></p>
 												
 												<label for ="secondAddress">Address: </label><br/>
@@ -106,7 +106,7 @@
 											
 												
 												<label for ="city">City: </label><br/>
-												<input id ="city" type ="text" name ="city" placeholder ="Enter city" required="required" maxlength="50"/><br/> 
+												<input id ="city" type ="text" name ="city" placeholder ="Enter city" maxlength="50"/><br/> 
 												<p id="p7"></p>
 												
 												<label for ="states">State: </label><br/>
@@ -168,52 +168,52 @@
 												<p id="p4"></p>
 												
 												<label for ="zipCode">Zip Code: </label><br/>											
-												<input id ="zipCode" type ="tel" name ="zipCode" placeholder ="xxxxx or xxxxx-xxxx" required="required" maxlength="10" minlength="5"/><br/>
+												<input id ="zipCode" type ="tel" name ="zipCode" placeholder ="xxxxx or xxxxx-xxxx"  maxlength="10" minlength="5"/><br/>
 												<p id="p6"></p>
 												
 												<label for ="phoneNumber">Phone Number: </label><br/>										
-												<input id ="phoneNumber" type ="tel" name ="phoneNumber" placeholder ="xxx-xxx-xxxx" required="required" maxlength="12"/><br/>
+												<input id ="phoneNumber" type ="tel" name ="phoneNumber" placeholder ="xxx-xxx-xxxx"  maxlength="12"/><br/>
 												<p id="p11"></p>
 												
 												<label for ="email">Email: </label><br/>											
-												<input id ="email" type ="text" name ="email" placeholder ="ex. x@x.x" required="required"/><br/>
+												<input id ="email" type ="text" name ="email" placeholder ="ex. x@x.x" /><br/>
 												<p id="p3"></p>
 												
 												
 												
 												<label for ="gender">Gender: </label><br/>
 											
-												<input type="radio" name="Gender" id="maleGender" value="male" required="required"/>
+												<input type="radio" name="Gender" id="maleGender" value="male"/>
 												<label for="maleGender"> Male </label>
-												<input type="radio" name="Gender" id="femaleGender" value="female" required="required"/>
+												<input type="radio" name="Gender" id="femaleGender" value="female"/>
 												<label for="femaleGender"> Female </label>
-												<input type="radio" name="Gender" id="otherGender" value="other" required="required"/> 
+												<input type="radio" name="Gender" id="otherGender" value="other"/> 
 												<label for="otherGender">Other </label><br/>
-												<!--<p id="p14"></p>-->
+												<p id="p14"></p>
 											
 												<label for ="martialStatus">Martial Status: </label><br/>
-												<input type ="radio" name ="Status" id ="singleStatus" value ="single" required="required"/>
+												<input type ="radio" name ="Status" id ="singleStatus" value ="single" />
 												<label for ="singleStatus"> Single </label>
-												<input type ="radio" name ="Status" id ="marriedStatus" value ="married" required="required"/>
+												<input type ="radio" name ="Status" id ="marriedStatus" value ="married" />
 												<label for ="marriedStatus"> Married </label>
-												<input type ="radio" name ="Status" id ="widowedStatus" value ="widowed" required="required"/>
+												<input type ="radio" name ="Status" id ="widowedStatus" value ="widowed" />
 												<label for ="widowedStatus"> Widowed </label>
-												<input type ="radio" name ="Status" id ="divorcedStatus" value ="divorced" required="required"/>
+												<input type ="radio" name ="Status" id ="divorcedStatus" value ="divorced" />
 												<label for ="divorcedStatus"> Divorced </label>
-												<input type ="radio" name ="Status" id ="separatedStatus" value ="separated" required="required"/> 
+												<input type ="radio" name ="Status" id ="separatedStatus" value ="separated" /> 
 												<label for="separatedStatus"> Separated </label><br/>
-												<!--<p id="p13"></p>-->
+												<p id="p13"></p>
 										
 												<label for ="birthDay">Date of birth: </label><br/>
 											
-												<input id ="birthDay" type = "date" name = "birthDay" required="required" placeholder="MM/dd/yyyy"/><br/>
+												<input id ="birthDay" type = "date" name = "birthDay" placeholder="MM/dd/yyyy"/><br/>
 												<p id="p15"></p>
 									<br><br>
 									</div>
 									<br><br>
 									<div align="center" style="margin-bottom:20%">
 									<input id="sumbit" type="submit" value = "Submit Data"/>
-									<input id="reset" type="reset" value = "Reset Data"/>
+									<input id="reset" type="reset" value = "Reset Data" onclick="reset()">
 									</div>
 
 							</form>

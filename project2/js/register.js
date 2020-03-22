@@ -11,47 +11,36 @@ let city = document.getElementById('city');
 let phoneNumber = document.getElementById('phoneNumber');
 let pswrd = document.getElementById('password');
 let repeatPassword = document.getElementById('repeatPassword');
-let Status = document.getElementById('Status');
-let Gender = document.getElementById('Gender');
 let birthDay = document.getElementById('birthDay');
-
-/*let Gender = document.jquerySelector('input[name = "Gender":checked');
-
 
 
 let returnValue = true;
 
-if(Gender != null)
-{
-	alert(Gender.value);
-}
-else
-{
-	alert('Nothing checked');
-}*/
+let Gender = $('input[name = "Gender"]:checked');
+let Status = $('input[name = "Status"]:checked');
 
-/*if(radioSelection(Status, "Select your status.", 'p13'))
+
+if(radioSelection(Status, "* Select your status. *", "p13"))
 {
 	returnValue = false;
 }
 
-if(radioSelection(Gender, "Select your gender.", 'p14'))
-{
-	returnValue = false;
-}*/
-
-if(radioSelection(birthDay, "Select your DoB.", 'p15'))
+if(radioSelection(Gender, "* Select your gender. *", "p14"))
 {
 	returnValue = false;
 }
 
+if(DoB(birthDay, "* Select your DoB. *"))
+{
+	returnValue = false;
+}
 
 
 document.getElementById('p10').innerText = "✓";
 
 if(pswrd != repeatPassword)
 {
-	document.getElementById('p10').innerText = "Password does not match.";
+	document.getElementById('p10').innerText = "* Password does not match. *";
 	returnValue = false;
 }
 if (!checkPassword(pswrd))
@@ -63,50 +52,71 @@ if(lengthDefine(userName, 6, 50))
 {
 	returnValue = false;
 }	
-if(inputAlphabet(firstName, "* For your name please use alphabets only *", "p1"))
+if(inputAlphabet(firstName, "* For your name please use alphabets only. *", "p1"))
 {
 	returnValue = false;
 }	
 
-if(inputAlphabet(lastName, "* For your name please use alphabets only *", "p8"))
+if(inputAlphabet(lastName, "* For your name please use alphabets only. *", "p8"))
 {
 	returnValue = false;
 }	
 
-if(inputAlphabet(city, "* For your city please use alphabets only *", "p7"))
+if(inputAlphabet(city, "* For your city please use alphabets only. *", "p7"))
 {
 	returnValue = false;
 }	
 
-if(emailValidation(email, "* Please enter a valid email address *"))
+if(emailValidation(email, "* Please enter a valid email address. *"))
 {
 	returnValue = false;
 }	
 
-if(trueSelection(states, "* Please Choose A State"))
+if(trueSelection(states, "* Please choose a state. *"))
 {
 	returnValue = false;
 }	
 
-if(textAlphanumeric(firstAddress, "* For Address please use numbers and letters *")) 
+if(textAlphanumeric(firstAddress, "* For Address please use numbers and letters (no space). *")) 
 {	
 	returnValue = false;
 }	
 
-if(textNumeric(phoneNumber, "* Please enter a valid phone number *", 'p11' ))
+if(textNumeric(phoneNumber, "* Please enter a valid phone number. *", 'p11' ))
 {
 	returnValue = false;
 }	
 
-if(textNumeric(zipCode, "* Please enter a valid zip code *", 'p6'))
+if(textNumeric(zipCode, "* Please enter a valid zip code. *", 'p6'))
 {
 	returnValue = false;
 }	
+
 
 return returnValue;
+
+
 }
 
-// Function that checks whether input text is numeric or not.
+// Function reset messages
+function reset()
+{
+	
+	document.getElementById("p1").value = " ";
+	document.getElementById("p5").value = " ";
+	document.getElementById("p8").value = " ";
+	document.getElementById("p7").value = " ";
+	document.getElementById("p4").value = " ";
+	document.getElementById("p6").value = " ";
+	document.getElementById("p11").value = " ";
+	document.getElementById("p3").value = " ";
+	document.getElementById("p14").value = " ";
+	document.getElementById("p13").value = " ";
+	document.getElementById("p15").value = " ";
+	document.getElementById("p9").value = " ";
+}
+
+// Function checks whether input text is numeric or not
 function textNumeric(inputtext, alertMsg, ptag) {
 let numericExpression = /^[0-9\-]+$/;
 if (inputtext.value.match(numericExpression)) {
@@ -118,7 +128,8 @@ inputtext.focus();
 return false;
 
 }
-// Function that checks whether input text is an alphabetic character or not.
+
+// Function checks whether input text is an alphabetic character or not
 function inputAlphabet(inputtext, alertMsg, ptag) {
 let alphaExp = /^[a-zA-Z]+$/;
 if (inputtext.value.match(alphaExp)) {
@@ -131,7 +142,8 @@ inputtext.focus();
 return false;
 
 }
-// Function that checks whether input text includes alphabetic and numeric characters.
+
+// Function checks whether input text includes alphabetic and numeric characters
 function textAlphanumeric(inputtext, alertMsg) {
 let alphaExp = /^[0-9a-zA-Z]+$/;
 if (inputtext.value.match(alphaExp)) {
@@ -143,7 +155,8 @@ inputtext.focus();
 return false;
 
 }
-// Function that checks whether the input characters are restricted according to defined by user.
+
+// Function checks whether the input characters are restricted according to defined by user
 function lengthDefine(inputtext, min, max) {
 let uInput = inputtext.value;
 if (uInput.length >= min && uInput.length <= max) {
@@ -155,7 +168,8 @@ inputtext.focus();
 return false;
 
 }
-// Function that checks whether a option is selected from the selector and if it's not it displays an alert message.
+
+// Function checks whether a option is selected from the selector 
 function trueSelection(inputtext, alertMsg) {
 if (inputtext.value == "select") {
 document.getElementById('p4').innerText = alertMsg; //this segment displays the validation rule for selection.
@@ -167,19 +181,29 @@ return true;
 
 }
 
+//Function checks whether DoB is iputted or not
+function DoB(inputtext, alertMsg){
+	if (!inputtext.value) {
+document.getElementById('p15').innerText = alertMsg; //this segment displays the validation rule for selection.
+inputtext.focus();
+return false;
+}
+document.getElementById('p15').innerText = "✓";
+return true;
+}
 
-/*function radioSelection(inputtext, alertMsg, ptag) {
-if (!inputtext.value == " ") {
+//Function checks if one of the radio is picked or not
+function radioSelection(inputtext, alertMsg, ptag) {
+if (inputtext.value == null) {
 document.getElementById(ptag).innerText = alertMsg; //this segment displays the validation rule for selection.
 inputtext.focus();
 return false;
 }
 document.getElementById(ptag).innerText = "✓";
 return true;
-}*/
+}
 
-
-// Function that checks whether an user entered valid email address or not and displays alert message on wrong email address format.
+// Function checks whether an user entered valid email address or not 
 function emailValidation(inputtext, alertMsg) {
 let emailExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -193,6 +217,7 @@ return false;
 
 }
 
+// Function checks if password follows the restriction 
 function checkPassword(pswrd)
 {
 	
@@ -200,13 +225,13 @@ function checkPassword(pswrd)
 	let alertMsg = "✓";
 	if(pswrd.length >= 50)
 	{
-		alertMsg = "Password is too long."
+		alertMsg = "* Password is too long. *"
 		
 	}
 	
 	else if( pswrd.length <= 8)
 	{
-		alertMsg = "Password is too short."
+		alertMsg = "* Password is too short. (8 characters or more) *"
 	}
 	else 
 	{
@@ -230,7 +255,7 @@ function checkPassword(pswrd)
 		console.log(counter);
 		if(counter < 4)
 		{
-			alertMsg = "Password is missing an uppercase, lowercase, digit, or special character."
+			alertMsg = "* Password is missing an uppercase, lowercase, digit, or special character. *"
 		}
 	}
 	
@@ -283,28 +308,6 @@ $('#zipCode').keyup(function(){
 		$(this).val(zipCode.substring(0,5) + "-" + zipCode.substring(5));
 	}
 });
-//https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-get-selected-radio-button-value
-
-//display if user input a good input for radio or display that they didnt pick
-$("input[type='sumbit']").click(function(){
-        	var radioValue = $("input[name='Gender']:checked").val();
-            if(radioValue){
-                alertMsg = "✓";
-            }
-			else{
-				alertMsg = "Please pick a gender.";
-				{
-        });
-		
-$("input[type='sumbit']").click(function(){
-        	var radioValue = $("input[name='Status']:checked").val();
-            if(radioValue){
-                alertMsg = "✓";
-            }
-			else{
-				alertMsg = "Please pick a status.";
-				{
-        });
-		
+	
 });
 
